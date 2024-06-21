@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Bookshelf</title>
+</head>
+<body>
+    <div class="background-overlay" id="backgroundOverlay"></div>
+    <header>
+        <h1>My Bookshelf</h1>
+    </header>
+    <div class="controls-wrapper">
+        <div class="search-container">
+            <input class="search-input" type="text" name="search-input" id="searchInput" placeholder="Search book title...">
+            <button class="search-button"></button>
+        </div>
+        <button class="add-book-button" id="addBookButton"><span class="add-icon"></span><p>Add Book</p></button>
+    </div>
+    <main class="bookshelf-container">
+        <div class="mobile-tabs">
+            <button class="tab-unread" id="tabUnread" autofocus>Unread Books</button>
+            <button class="tab-read" id="tabRead">Read Books</button>
+        </div>
+        <div class="unread-section tab-active" id="unreadSection">
+            <h1>Unread Books</h1>
+            <div class="unread-books">
+                <h1 id="noBooksFound">No books found</h1>
+            </div>
+        </div>
+        <div class="read-section" id="readSection">
+            <h1>Read Books</h1>
+            <div class="read-books">
+                <h1 id="noBooksFound">No books found</h1>
+            </div>
+        </div>
+        <div class="book-modal" id="bookModal">
+            <h1>Add New Book</h1>
+            <form class="book-form" id="bookForm">
+                <label for="titleInput">Book Title</label>
+                <input type="text" id="titleInput" name="titleInput" required>
+                <label for="authorInput">Author</label>
+                <input type="text" id="authorInput" name="authorInput" required>
+                <label for="yearInput">Year</label>
+                <input type="number" id="yearInput" name="yearInput" required>
+                <div class="read-checkbox">
+                    <label for="readCheckbox">Read</label>
+                    <input type="checkbox" id="readCheckbox" name="readCheckbox">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="submitBookButton">Add</button>
+                    <button type="button" id="cancelBookButton">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="edit-book-modal" id="editBookModal">
+            <h1>Edit Book</h1>
+            <form class="edit-book-form" id="editBookForm">
+                <label for="editTitleInput">Book Title</label>
+                <input type="text" id="editTitleInput" name="editTitleInput" required>
+                <label for="editAuthorInput">Author</label>
+                <input type="text" id="editAuthorInput" name="editAuthorInput" required>
+                <label for="editYearInput">Year</label>
+                <input type="number" id="editYearInput" name="editYearInput" required>
+                <div class="edit-read-checkbox">
+                    <label for="editReadCheckbox">Read</label>
+                    <input type="checkbox" id="editReadCheckbox" name="editReadCheckbox">
+                </div>
+                <div class="edit-form-actions">
+                    <button type="submit" id="submitEditButton">Save</button>
+                    <button type="button" id="cancelEditButton">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
